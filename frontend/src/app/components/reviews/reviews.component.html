@@ -1,0 +1,27 @@
+<h2 class="text-2xl font-bold">Reviews for Facility</h2>
+<table class="min-w-full border-collapse border">
+  <thead>
+    <tr>
+      <th class="border p-2">User</th>
+      <th class="border p-2">Equipment</th>
+      <th class="border p-2">Staff</th>
+      <th class="border p-2">Hygene</th>
+      <th class="border p-2">Space</th>
+      <th class="border p-2">Date</th>
+      <th class="border p-2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of reviews">
+      <td class="border p-2">{{ review.userId }}</td>
+      <td class="border p-2">{{ review.rate.equipment }}</td>
+      <td class="border p-2">{{ review.rate.staff }}</td>
+      <td class="border p-2">{{ review.rate.hygene }}</td>
+      <td class="border p-2">{{ review.rate.space }}</td>
+      <td class="border p-2">{{ review.createdAt | date: 'short' }}</td>
+      <td class="border p-2">
+        <button (click)="deleteReview(review.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

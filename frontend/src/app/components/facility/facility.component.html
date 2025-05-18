@@ -1,0 +1,8 @@
+<div *ngIf="facility" class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-6">
+    <h2 class="text-2xl font-bold mb-4 text-gray-900">{{ facility.name || 'No Name' }}</h2>
+    <p class="mb-2 text-gray-700"><strong>Description:</strong> {{ facility.description }}</p>
+    <p class="mb-2 text-gray-700"><strong>Address:</strong> {{ facility.address }}</p>
+    <p class="mb-2 text-gray-700"><strong>City:</strong> {{ facility.city }}</p>
+    <p class="mb-2 text-gray-700"><strong>Created At:</strong> {{ facility.createdAt | date:'short' }}</p>
+    <p class="mb-2 text-gray-700"><strong>Total Rating:</strong> {{ facility.totalRating || 'No Rating' }}</p>
+</div>

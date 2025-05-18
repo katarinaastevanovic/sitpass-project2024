@@ -1,0 +1,43 @@
+<!-- rate-facility.component.html -->
+<div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Rate Facility</h2>
+    <form [formGroup]="rateForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="equipment" class="block text-sm font-medium text-gray-700">Equipment</label>
+        <select id="equipment" formControlName="equipment" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+          <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="staff" class="block text-sm font-medium text-gray-700">Staff</label>
+        <select id="staff" formControlName="staff" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+          <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="hygene" class="block text-sm font-medium text-gray-700">Hygene</label>
+        <select id="hygene" formControlName="hygene" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+          <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="space" class="block text-sm font-medium text-gray-700">Space</label>
+        <select id="space" formControlName="space" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+          <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label for="comment" class="block text-sm font-medium text-gray-700">Comment (optional)</label>
+        <textarea id="comment" formControlName="comment" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"></textarea>
+      </div>
+
+      <button type="submit" class="mt-2 bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
+        Submit Rating
+      </button>
+    </form>
+  </div>
+  

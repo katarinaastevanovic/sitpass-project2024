@@ -1,0 +1,22 @@
+.container {
+    width: 100%; /* Osigurava da kontejner zauzima celu širinu */
+    padding: 20px; /* Dodaje prostor unutar kontejnera */
+    margin: 0 auto; /* Centrira kontejner na stranici */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Dodaje blagi senki oko kontejnera */
+}
+
+table {
+    width: 100%; /* Tabela zauzima celu širinu svog kontejnera */
+    border-collapse: collapse; /* Uklanja dvostruke ivice između ćelija */
+}
+
+th, td {
+    text-align: left; /* Poravnava tekst unutar ćelija na levo */
+    padding: 12px; /* Dodaje prostor unutar ćelija */
+    border-bottom: 1px solid #ccc; /* Dodaje horizontalnu liniju ispod svake ćelije */
+}
+
+thead {
+    background-color: #f5f5f5; /* Svetlo siva boja za zaglavlje tabele */
+    font-weight: bold; /* Čini tekst u zaglavlju tabele podebljanim */
+}

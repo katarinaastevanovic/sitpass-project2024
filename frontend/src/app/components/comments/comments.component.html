@@ -1,0 +1,31 @@
+<div *ngIf="comments.length > 0; else noComments">
+    <h3 class="text-xl font-bold mb-4">Comments</h3>
+    
+    <div *ngFor="let comment of comments" class="bg-white p-4 rounded-lg shadow mb-4">
+      <!-- Prikaz email-a korisnika koji je ostavio komentar -->
+      <p><strong>{{ comment.userEmail || 'Anonymous' }}</strong> says:</p>
+      <p>{{ comment.text }}</p>
+      <p class="text-gray-500 text-sm">Posted on: {{ comment.createdAt | date:'short' }}</p>
+  
+      <!-- Dugme Reply -->
+      <button (click)="showReplyForm(comment.id)" class="text-blue-600 hover:text-blue-800">Reply</button>
+  
+      <!-- Forma za unos odgovora (po defaultu skrivena) -->
+      <div *ngIf="replyToCommentId === comment.id" class="mt-4">
+        <textarea [(ngModel)]="replyText" rows="3" class="w-full p-2 border rounded"></textarea>
+        <button (click)="postReply(comment.id)" class="mt-2 bg-blue-600 text-white py-1 px-3 rounded">Post Reply</button>
+      </div>
+  
+      <!-- Prikaz odgovora (Replies) -->
+        <div *ngFor="let reply of comment.replies" class="ml-6 mt-4 bg-gray-100 p-3 rounded-lg">
+            <!-- Prikaz email-a korisnika koji je ostavio reply -->
+            <p><strong>{{ reply.userEmail || 'Anonymous' }}</strong> replies:</p>
+            <p>{{ reply.text }}</p>
+            <p class="text-gray-500 text-sm">Posted on: {{ reply.createdAt | date:'short' }}</p>
+        </div>
+    </div>
+</div>
+
+<ng-template #noComments>
+  <p>No comments available for this facility.</p>
+</ng-template>

@@ -1,0 +1,20 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">My Excercises</h2>
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b">Facility</th>
+          <th class="py-2 px-4 border-b">From</th>
+          <th class="py-2 px-4 border-b">Duration (minutes)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let excercise of excercises">
+          <td class="py-2 px-4 border-b">{{ excercise.facilityName }}</td>
+          <td class="py-2 px-4 border-b">{{ excercise.fromDateTime | date:'short' }}</td>
+          <td class="py-2 px-4 border-b">{{ excercise.duration }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
